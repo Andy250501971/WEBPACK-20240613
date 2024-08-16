@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="favicon.ico">
+	<title>WEBPACK</title>
+</head>
+<body>
+
+	<footer>
+	<!-- Последний слайд с формой обратной связи -->
+	<article class="feetback__contact-content" id="feetback">
+		<div class="feedback__grid-container">
+			<div class="grid__container-left">
+				<h4 class="feedback__content--title">Мебель на заказ, сделаем, вам понравится</h4>
+						<div class="contact">
+							<p class="contact__mail">email: do-id@mail.ru</p>
+							<p class="contact__phone"> tel: +7(965) 438-37-15</p>
+							<ul class="contact__messenger">
+								<li class="contact__element--messenger">
+									<a class="messenger__link" aria-label="Telegram" href="#">
+											<svg class="messenger__icon">
+												<use href="<%= require('./images/sprite.svg') %>#Telegram" ></use>
+											</svg>
+									</a>
+								</li>
+								<li class="contact__element--messenger">
+									<a class="messenger__link" aria-label="Viber" href="#">
+											<svg class="messenger__icon">
+													<use href="./images/sprite.svg#Viber"></use>
+											</svg>
+									</a>
+								</li>
+								<li class="contact__element--messenger">
+									<a class="messenger__link" aria-label="WhatsApp" href="#">
+											<svg class="messenger__icon">
+													<use href="./images/sprite.svg#WhatsApp"></use>
+											</svg>
+									</a>
+								</li>
+							</ul> 
+						</div>
+			</div>
+			<div class="grid__container-right">
+				<h5 class="feedback__title">отправьте запрос<br> на расчет</h5>
+				<form action="#"	id="form"	name="form" class="feedback form">
+					<!-- Hidden Required Fields -->
+					<input type="hidden" name="project_name" value="Стильные шкафы">
+					<input type="hidden" name="admin_email" value="andrey-nov@mail.ru">
+					<input type="hidden" name="form_subject" value="Заявка от стильных шкафов">
+					<!-- END Hidden Required Fields -->
+						<label class="field__item">
+							<input type="text" id="name" name="name"	data-reg="^[А-ЯЁ][а-яё]*$" required>
+							<span>Как к Вам обращаться?</span>
+							<div	class="line"></div>
+						</label>
+						<label class="field__item">
+						<input type="tel" id="phone"	data-tel-input name="phone" maxlength="18" required>
+							<span>Ваш контактный телефон</span>
+							<div	class="line"></div>
+						</label>
+						<label class="field__item">
+							<textarea type="text" name="textarea" style="overflow:hidden" required></textarea>
+							<span>Укажите дату и время для связи</span>
+							<div	class="line"></div>
+						</label>
+						<div class="wrapper">
+							<button type="button">
+								<span></span>
+								Отправить запрос
+								<span></span>
+							</button>
+						</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="details">
+			<span class="details__address">105318, г.Москва, ул.Ткацкая, дом 17, ИНН 7709806361 КПП 772401001</span> 
+		</div>
+	</article>
+	</footer>
+</body>
+</html>
