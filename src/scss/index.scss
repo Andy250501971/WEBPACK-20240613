@@ -1,18 +1,10 @@
-@import './fonts';
-@import './style';
-@import './variables';
-@import './feedback';
+@use './globals';
+@use './fonts';
+@use './style';
+@use './variables';
+@use './feedback';
+@use './forminput';
+@use	'./formbutton';
 
 
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-/* Скрываем Scrollbar */
-body {
-	scrollbar-width: none; /* Firefox */
-}
-body::-webkit-scrollbar { 
-	display: none; /* Safari and Chrome */
-}
+

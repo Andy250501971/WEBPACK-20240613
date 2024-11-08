@@ -20,6 +20,7 @@ module.exports = {
 		filename: filename("js"),
 		path: path.resolve(__dirname,"dist"),
 	},
+	devtool: 'source-map', // Установите source-map для генерации исходных карт
 	resolve: {
 		extensions: [".js"],
 		alias:{	
@@ -45,8 +46,10 @@ module.exports = {
 		}),
 		new CopyPlugin({
 			patterns: [
-				{ from: path.resolve(__dirname,"src/favicon.ico"), to: path.resolve(__dirname,"dist")}
-			]
+				{ from: path.resolve(__dirname,"src/favicon.ico"), to: path.resolve(__dirname,"dist")},
+				{	from: path.resolve(__dirname,"src/mail.php"), to: path.resolve(__dirname,"dist")}, // Копирование всех PHP файлов из src // Куда копировать
+				{ from: path.resolve(__dirname, 'src/phpmailer'), to: path.resolve(__dirname, "dist/phpmailer")}, // Исходная папка// Целевая папка
+ 			]
 		}),
 		new MiniCssExtractPlugin({
 			filename: filename("css")
@@ -66,17 +69,17 @@ module.exports = {
 				],
 			},
 			{
-				test: /\.woff2?$/i,
-				type:  "asset/resource",
-				generator:  {
-					filename: "fonts/[name][ext]"
+				test: /\.(woff|woff2|eot|ttf|otf)$/,
+				type: 'asset/resource',
+				generator: {
+						filename: 'fonts/[name][ext]', // путь, куда будут сохраняться шрифты в сборке
 				}
 			},
 			{
 				test: /\.(png|svg|jpg|jpeg|gif)$/i,
 				type: 'asset/resource',
 				generator:  {
-					filename: "images/[name][ext]"
+					filename: 'images/[name][ext]'
 				}
 			},
 			{

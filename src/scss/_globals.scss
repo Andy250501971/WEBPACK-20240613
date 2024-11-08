@@ -1,0 +1,17 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* Скрываем Scrollbar */
+body {
+	background-color: #000;
+	font-size: calc(var(--index) * .8);
+	font-family: 'raleway';
+	line-height: 1.75;
+	font-weight: 300;
+	color: #fbf19a;
+	height: var(--depth);
+	scrollbar-width: none; /* Firefox */
+	overflow: hidden; /* Скрывает полосу прокрутки */
+}

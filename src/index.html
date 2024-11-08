@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,21 +19,21 @@
 							<p class="contact__phone"> tel: +7(965) 438-37-15</p>
 							<ul class="contact__messenger">
 								<li class="contact__element--messenger">
-									<a class="messenger__link" aria-label="Telegram" href="#">
+									<a class="messenger__link" aria-label="Telegram" href="https://t.me/Andrey_Novitskiy_1971" target="_blank">
 											<svg class="messenger__icon">
 												<use href="<%= require('./images/sprite.svg') %>#Telegram" ></use>
 											</svg>
 									</a>
 								</li>
 								<li class="contact__element--messenger">
-									<a class="messenger__link" aria-label="Viber" href="#">
+									<a class="messenger__link" aria-label="Viber" href="viber://chat?number=%2B79161115899">
 											<svg class="messenger__icon">
 													<use href="./images/sprite.svg#Viber"></use>
 											</svg>
 									</a>
 								</li>
 								<li class="contact__element--messenger">
-									<a class="messenger__link" aria-label="WhatsApp" href="#">
+									<a class="messenger__link" aria-label="WhatsApp" href="https://wa.me/79161115899" target="_blank">
 											<svg class="messenger__icon">
 													<use href="./images/sprite.svg#WhatsApp"></use>
 											</svg>
@@ -43,39 +43,42 @@
 						</div>
 			</div>
 			<div class="grid__container-right">
+				
 				<h5 class="feedback__title">отправьте запрос<br> на расчет</h5>
-				<form action="#"	id="form"	name="form" class="feedback form">
+
+				<form action="mail.php"	id="form"	name="form" method="POST" class="feedback form" autocomplete="off">
 					<!-- Hidden Required Fields -->
-					<input type="hidden" name="project_name" value="Стильные шкафы">
-					<input type="hidden" name="admin_email" value="andrey-nov@mail.ru">
-					<input type="hidden" name="form_subject" value="Заявка от стильных шкафов">
+					<input type="hidden" id="project_name" name="project_name" value="Стильные шкафы">
+					<input type="hidden" id="admin_email" name="admin_email" value="andrey-nov@mail.ru">
+					<input type="hidden" id="form_subject" name="form_subject" value="Заявка от стильных шкафов">
 					<!-- END Hidden Required Fields -->
-						<label class="field__item">
-							<input type="text" id="name" name="name"	data-reg="^[А-ЯЁ][а-яё]*$" required>
-							<span>Как к Вам обращаться?</span>
-							<div	class="line"></div>
-						</label>
-						<label class="field__item">
-						<input type="tel" id="phone"	data-tel-input name="phone" maxlength="18" required>
-							<span>Ваш контактный телефон</span>
-							<div	class="line"></div>
-						</label>
-						<label class="field__item">
-							<textarea type="text" name="textarea" style="overflow:hidden" required></textarea>
-							<span>Укажите дату и время для связи</span>
-							<div	class="line"></div>
-						</label>
-						<div class="wrapper">
-							<button type="button">
-								<span></span>
-								Отправить запрос
-								<span></span>
-							</button>
-						</div>
+					<div class="form-group">	
+							<input type="text" id="name" name="name"	data-reg="^[А-ЯЁ][а-яё]*$" autocomplete="off" required>
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label for="name">Как к Вам обращаться?</label>
+					</div>
+
+					<div class="form-group">	
+						<input type="tel" id="phone"	data-tel-input name="phone" maxlength="18" autocomplete="off" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label for="phone">Ваш контактный телефон</label>
+					</div>
+
+					<div class="form-group">	
+						<textarea name="textarea" id="mytextarea" class="textarea" placeholder="" autocomplete="off" required></textarea>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label for="textarea" class="placeholder">Укажите дату и время для связи</label>
+					</div>
+
+					<div class="wrapper">
+							<button id="button" name="button" class="button" type="submit">Отправить</button>
+					</div>
 				</form>
 			</div>
 		</div>
-
 		<div class="details">
 			<span class="details__address">105318, г.Москва, ул.Ткацкая, дом 17, ИНН 7709806361 КПП 772401001</span> 
 		</div>
